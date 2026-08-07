@@ -110,7 +110,7 @@
       contests: '赛事 / 活动',
       problems: '主题库',
       articles: '文章',
-      rankings: '排行榜'
+      rankings: '排行榜（距离出成绩到更新榜单可能有延迟）'
     };
     document.getElementById('section-title').innerHTML = titles[state.tab] || '';
   }
