@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EthernosSCC 检索站</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/haskell.min.js"></script>
+</head>
+<body>
+<div id="header">
+  <h1>EthernosSCC 检索站</h1>
+  <p>赛事 / 主题库 / 文章</p>
+</div>
+
+<div id="container">
+  <div id="center" class="column">
+    <div class="inner">
+      <h2 id="section-title">赛事 / 活动</h2>
+      <div id="content">正在加载数据...</div>
+      <div id="article-view" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div id="left" class="column">
+    <div class="inner">
+      <h2>导航</h2>
+      <ul id="nav">
+        <li><a href="#contests" onclick="switchTab('contests');return false;">赛事 / 活动</a></li>
+        <li><a href="#problems" onclick="switchTab('problems');return false;">主题库</a></li>
+        <li><a href="#articles" onclick="switchTab('articles');return false;">文章</a></li>
+      </ul>
+      <h2>关于</h2>
+      <p>本站为 EthernosSCC 的静态检索入口，全部数据由 JSON 与 Markdown 驱动。</p>
+    </div>
+  </div>
+
+  <div id="right" class="column">
+    <div class="inner">
+      <h2>检索</h2>
+      <input type="text" id="search-input" onkeyup="doSearch();" placeholder="输入关键词..." />
+      <div id="filter-panel"></div>
+      <h2>统计</h2>
+      <div id="stats">加载中...</div>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+  <p>EthernosSCC &copy; 2026</p>
+</div>
+
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

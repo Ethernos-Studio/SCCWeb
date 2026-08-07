@@ -1,0 +1,268 @@
+/* EthernosSCC 检索站样式 */
+/* 仅使用 CSS 2.1 特性 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "宋体", SimSun, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  background: #fff;
+}
+
+a {
+  color: #003366;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+#header {
+  background: #003366;
+  color: #fff;
+  padding: 12px 16px;
+  border-bottom: 2px solid #000;
+}
+
+#header h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+#header p {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* 三栏 Holy Grail 布局 */
+#container {
+  overflow: hidden;
+  padding-left: 180px;
+  padding-right: 260px;
+}
+
+.column {
+  position: relative;
+  float: left;
+}
+
+.column .inner {
+  padding: 12px;
+}
+
+#center {
+  width: 100%;
+  background: #fff;
+}
+
+#left {
+  width: 179px;
+  margin-left: -100%;
+  right: 180px;
+  background: #e8e8e8;
+  border-right: 1px solid #999;
+}
+
+#right {
+  width: 259px;
+  margin-right: -260px;
+  background: #f4f4f4;
+  border-left: 1px solid #999;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 4px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+#nav {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+#nav li {
+  margin-bottom: 4px;
+}
+
+#nav a {
+  display: block;
+  padding: 4px 6px;
+  background: #ddd;
+  border: 1px solid #999;
+  color: #000;
+  text-decoration: none;
+}
+
+#nav a:hover,
+#nav a.active {
+  background: #003366;
+  color: #fff;
+}
+
+#search-input {
+  width: 95%;
+  padding: 3px;
+  border: 1px solid #999;
+  font-size: 13px;
+}
+
+#filter-panel {
+  margin-top: 12px;
+}
+
+#stats {
+  font-size: 12px;
+  color: #333;
+}
+
+#footer {
+  clear: both;
+  background: #ddd;
+  border-top: 1px solid #999;
+  padding: 8px 16px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* 数据表格 */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+table.data-table th,
+table.data-table td {
+  border: 1px solid #999;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+table.data-table th {
+  background: #ddd;
+  font-weight: bold;
+}
+
+table.data-table tr:hover {
+  background: #f0f0f0;
+}
+
+.difficulty {
+  display: inline;
+  padding: 1px 4px;
+  border: 1px solid #999;
+  background: #eee;
+  color: #fff;
+  font-size: 12px;
+}
+
+.difficulty-1 { background: #fe4c61; }
+.difficulty-2 { background: #f39c11; }
+.difficulty-3 { background: #ffc116; }
+.difficulty-4 { background: #52c41a; }
+.difficulty-5 { background: #13c2c2; }
+.difficulty-6 { background: #3498db; }
+.difficulty-7 { background: #9d3dcf; }
+.difficulty-8 { background: #0e1d69; }
+
+.status {
+  display: inline;
+  padding: 1px 4px;
+  border: 1px solid #999;
+  font-size: 12px;
+}
+
+.status-upcoming { background: #fff3cd; }
+.status-ongoing { background: #d4edda; }
+.status-ended { background: #e2e3e5; color: #666; }
+.status-unknown { background: #f8d7da; }
+
+/* 列表 */
+.item-list {
+  list-style: none;
+}
+
+.item-list li {
+  border-bottom: 1px dashed #999;
+  padding: 8px 0;
+}
+
+.item-list li h3 {
+  margin-top: 0;
+}
+
+.item-meta {
+  font-size: 12px;
+  color: #555;
+}
+
+/* 文章 Markdown 渲染 */
+#article-view {
+  border: 1px solid #999;
+  padding: 12px;
+  background: #fafafa;
+}
+
+#article-view h1,
+#article-view h2,
+#article-view h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+#article-view p {
+  margin-bottom: 8px;
+}
+
+#article-view pre {
+  background: #eee;
+  border: 1px solid #999;
+  padding: 8px;
+  overflow: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+#article-view code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  background: #eee;
+  padding: 1px 3px;
+}
+
+#article-view hr {
+  border: none;
+  border-top: 1px solid #999;
+  margin: 12px 0;
+}
+
+#article-view ul,
+#article-view ol {
+  margin-left: 24px;
+  margin-bottom: 8px;
+}
+
+.back-link {
+  margin-bottom: 12px;
+}
+
+.empty-tip {
+  color: #666;
+  font-style: italic;
+}

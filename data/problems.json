@@ -1,0 +1,164 @@
+[
+  {
+    "title": "[秒学Python P1001] Hello, World!",
+    "id": "ES1001",
+    "url": "https://www.luogu.com.cn/problem/U619327",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1002] 数学 - 变量与输出",
+    "id": "ES1002",
+    "url": "https://www.luogu.com.cn/problem/U619333",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1003] A+B Problem",
+    "id": "ES1003",
+    "url": "https://www.luogu.com.cn/problem/U619353",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1004] 优等生",
+    "id": "ES1004",
+    "url": "https://www.luogu.com.cn/problem/U619357",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1005] 生命、宇宙和一切",
+    "id": "ES1005",
+    "url": "https://www.luogu.com.cn/problem/U619360",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1006] 九九乘法表",
+    "id": "ES1006",
+    "url": "https://www.luogu.com.cn/problem/U619368",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1007] 小A的数字",
+    "id": "ES1007",
+    "url": "https://www.luogu.com.cn/problem/U628035",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1008] 小A的字符串",
+    "id": "ES1008",
+    "url": "https://www.luogu.com.cn/problem/U628037",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1009] 小 A 又双叒又得到了一个字符串",
+    "id": "ES1009",
+    "url": "https://www.luogu.com.cn/problem/U628038",
+    "difficulty": 1
+  },
+  {
+    "title": "[秒学Python P1010] 合法字符串",
+    "id": "ES1010",
+    "url": "https://www.luogu.com.cn/problem/U628040",
+    "difficulty": 1
+  },
+  {
+    "title": "[Ethernos SCC-E 2025]编译器考古",
+    "id": "ES1011",
+    "url": "https://www.luogu.com.cn/problem/U709816",
+    "difficulty": 8
+  },
+  {
+    "title": "[SCC-G2026] 乘法表 (pow)",
+    "id": "ES1012",
+    "url": "https://www.luogu.com.cn/problem/T684767",
+    "difficulty": 1
+  },
+  {
+    "title": "[E02] 优等生 2",
+    "id": "ES1013",
+    "url": "https://www.luogu.com.cn/problem/T684768",
+    "difficulty": 1
+  },
+  {
+    "title": "[E03] 回文数",
+    "id": "ES1014",
+    "url": "https://www.luogu.com.cn/problem/T684769",
+    "difficulty": 1
+  },
+  {
+    "title": "[E04] 级数求和（P1035 改编）",
+    "id": "ES1015",
+    "url": "https://www.luogu.com.cn/problem/T684770",
+    "difficulty": 1
+  },
+  {
+    "title": "[SCC-G2026] 质数 (prime)",
+    "id": "ES1016",
+    "url": "https://www.luogu.com.cn/problem/T715423",
+    "difficulty": 1
+  },
+  {
+    "title": "[SCC-G2026] 排序 (sort)",
+    "id": "ES1017",
+    "url": "https://www.luogu.com.cn/problem/T715426",
+    "difficulty": 2
+  },
+  {
+    "title": "[SCC-G2026] 补给 (supply)",
+    "id": "ES1018",
+    "url": "https://www.luogu.com.cn/problem/T719320",
+    "difficulty": 2
+  },
+  {
+    "title": "毒巧克力 (poison)",
+    "id": "ES1019",
+    "url": "https://www.luogu.com.cn/problem/T762276",
+    "difficulty": 2
+  },
+  {
+    "title": "[SCC-G 2026] 温度监测",
+    "id": "ES1020",
+    "url": "https://www.luogu.com.cn/problem/T752647",
+    "difficulty": 1
+  },
+  {
+    "title": "[SCC-G 2026] 累积计划",
+    "id": "ES1021",
+    "url": "https://www.luogu.com.cn/problem/T752655",
+    "difficulty": 1
+  },
+  {
+    "title": "[SCC-G 2026] 数据筛选",
+    "id": "ES1022",
+    "url": "https://www.luogu.com.cn/problem/T752656",
+    "difficulty": 1
+  },
+  {
+    "title": "[SCC-G 2026] 数组翻转与查询",
+    "id": "ES1023",
+    "url": "https://www.luogu.com.cn/problem/T752668",
+    "difficulty": 2
+  },
+  {
+    "title": "[ESCC-J 2026ScdOL R2] 阿尔法战区的净水片 (zone_water)",
+    "id": "ES1024",
+    "url": "https://www.luogu.com.cn/problem/T798807",
+    "difficulty": 1
+  },
+  {
+    "title": "[ESCC-J 2026ScdOL R2] 雪原足迹 (zone_snow)",
+    "id": "ES1025",
+    "url": "https://www.luogu.com.cn/problem/T798818",
+    "difficulty": 3
+  },
+  {
+    "title": "[ESCC-J 2026ScdOL R2] 雪杉编队的最小载重 (zone_convoy)",
+    "id": "ES1026",
+    "url": "https://www.luogu.com.cn/problem/T798824",
+    "difficulty": 4
+  },
+  {
+    "title": "[ESCC-J 2026ScdOL R2] 封锁线的余数谜题 (zone_sync)",
+    "id": "ES1027",
+    "url": "https://www.luogu.com.cn/problem/T798836",
+    "difficulty": 5
+  }
+]

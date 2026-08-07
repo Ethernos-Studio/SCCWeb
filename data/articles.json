@@ -1,0 +1,16 @@
+[
+  {
+    "id": "announce-001",
+    "title": "EthernosSCC 检索站正式上线",
+    "date": "2026-08-06",
+    "category": "公告",
+    "file": "articles/announcement-001.md"
+  },
+  {
+    "id": "editorial-pow",
+    "title": "[SCC-G2026] 乘法表 题解",
+    "date": "2026-08-05",
+    "category": "题解",
+    "file": "articles/editorial-pow.md"
+  }
+]
