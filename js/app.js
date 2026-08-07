@@ -4,6 +4,7 @@
     contests: [],
     problems: [],
     articles: [],
+    rankings: [],
     search: '',
     difficulty: 0
   };
@@ -21,18 +22,20 @@
 
   function init() {
     var hash = window.location.hash.replace(/^#/, '');
-    if (hash === 'contests' || hash === 'problems' || hash === 'articles') {
+    if (hash === 'contests' || hash === 'problems' || hash === 'articles' || hash === 'rankings') {
       state.tab = hash;
     }
 
     Promise.all([
       fetch('data/contests.json').then(function(r) { return r.json(); }),
       fetch('data/problems.json').then(function(r) { return r.json(); }),
-      fetch('data/articles.json').then(function(r) { return r.json(); })
+      fetch('data/articles.json').then(function(r) { return r.json(); }),
+      fetch('data/rankings.json').then(function(r) { return r.json(); })
     ]).then(function(results) {
       state.contests = results[0];
       state.problems = results[1];
       state.articles = results[2];
+      state.rankings = results[3];
       render();
 
       var articleId = getQueryParam('id');
@@ -83,6 +86,8 @@
       html = renderProblems(filterProblems());
     } else if (state.tab === 'articles') {
       html = renderArticles(filterArticles());
+    } else if (state.tab === 'rankings') {
+      html = renderRankings(filterRankings());
     }
 
     document.getElementById('content').innerHTML = html;
@@ -104,9 +109,10 @@
     var titles = {
       contests: '赛事 / 活动',
       problems: '主题库',
-      articles: '文章'
+      articles: '文章',
+      rankings: '排行榜'
     };
-    document.getElementById('section-title').innerHTML = titles[state.tab];
+    document.getElementById('section-title').innerHTML = titles[state.tab] || '';
   }
 
   function updateFilters() {
@@ -132,7 +138,8 @@
     var s = document.getElementById('stats');
     s.innerHTML = '赛事：' + state.contests.length +
       '<br/>主题：' + state.problems.length +
-      '<br/>文章：' + state.articles.length;
+      '<br/>文章：' + state.articles.length +
+      '<br/>选手：' + state.rankings.length;
   }
 
   function filterContests() {
@@ -243,6 +250,168 @@
       html += '</li>';
     }
     html += '</ul>';
+    return html;
+  }
+
+  function buildContestMap() {
+    var map = {};
+    for (var i = 0; i < state.contests.length; i++) {
+      map[state.contests[i].id] = state.contests[i];
+    }
+    return map;
+  }
+
+  function computeRatings() {
+    var INITIAL_RATING = 1500;
+    var K = 32;
+    var contestMap = buildContestMap();
+    var ratings = {};
+    var contestIdSet = {};
+    var i, j;
+
+    for (i = 0; i < state.rankings.length; i++) {
+      ratings[state.rankings[i].name] = INITIAL_RATING;
+      var records = state.rankings[i].records || [];
+      for (j = 0; j < records.length; j++) {
+        if (records[j].contest_id) contestIdSet[records[j].contest_id] = true;
+      }
+    }
+
+    var contestIds = [];
+    for (var id in contestIdSet) {
+      if (contestMap[id] && contestMap[id].start_time) {
+        contestIds.push(id);
+      }
+    }
+    contestIds.sort(function(a, b) {
+      return new Date(contestMap[a].start_time).getTime() - new Date(contestMap[b].start_time).getTime();
+    });
+
+    for (var c = 0; c < contestIds.length; c++) {
+      var cid = contestIds[c];
+      var participants = [];
+      for (i = 0; i < state.rankings.length; i++) {
+        var user = state.rankings[i];
+        var rec = null;
+        for (j = 0; j < (user.records || []).length; j++) {
+          if (user.records[j].contest_id === cid) {
+            rec = user.records[j];
+            break;
+          }
+        }
+        if (rec) participants.push({ user: user, score: rec.score });
+      }
+
+      var n = participants.length;
+      if (n < 2) continue;
+
+      var changes = {};
+      for (i = 0; i < n; i++) {
+        var pi = participants[i];
+        var lower = 0, equal = 0;
+        for (j = 0; j < n; j++) {
+          if (i === j) continue;
+          var pj = participants[j];
+          if (pi.score > pj.score) lower++;
+          else if (pi.score === pj.score) equal++;
+        }
+        var actual = (lower + 0.5 * equal) / (n - 1);
+
+        var expected = 0;
+        for (j = 0; j < n; j++) {
+          if (i === j) continue;
+          var pj = participants[j];
+          expected += 1 / (1 + Math.pow(10, (ratings[pj.user.name] - ratings[pi.user.name]) / 400));
+        }
+        expected /= n - 1;
+
+        changes[pi.user.name] = K * (actual - expected);
+      }
+
+      for (i = 0; i < n; i++) {
+        var name = participants[i].user.name;
+        ratings[name] += changes[name];
+      }
+    }
+
+    var result = {};
+    for (var name in ratings) {
+      result[name] = Math.round(ratings[name]);
+    }
+    return { ratings: result, contestMap: contestMap };
+  }
+
+  function filterRankings() {
+    var list = state.rankings;
+    if (!state.search) return list;
+    var contestMap = buildContestMap();
+    return list.filter(function(item) {
+      if (contains(item.name, state.search)) return true;
+      var records = item.records || [];
+      for (var i = 0; i < records.length; i++) {
+        var contest = contestMap[records[i].contest_id];
+        if (contains(contest && contest.name, state.search)) return true;
+      }
+      return false;
+    });
+  }
+
+  function renderRankings(list) {
+    if (!list.length) return '<p class="empty-tip">未找到匹配的选手。</p>';
+
+    var computed = computeRatings();
+    var ratings = computed.ratings;
+    var contestMap = computed.contestMap;
+
+    var items = [];
+    for (var i = 0; i < list.length; i++) {
+      var user = list[i];
+      var records = (user.records || []).slice();
+      records.sort(function(a, b) { return b.score - a.score; });
+      var top5 = records.slice(0, 5);
+      items.push({ user: user, rating: ratings[user.name] || 1500, top5: top5, total: records.length });
+    }
+
+    items.sort(function(a, b) {
+      if (b.rating !== a.rating) return b.rating - a.rating;
+      var aSum = a.top5.reduce(function(s, r) { return s + r.score; }, 0);
+      var bSum = b.top5.reduce(function(s, r) { return s + r.score; }, 0);
+      if (bSum !== aSum) return bSum - aSum;
+      if (b.total !== a.total) return b.total - a.total;
+      return a.user.name.localeCompare(b.user.name);
+    });
+
+    var html = '<table class="data-table"><thead><tr>';
+    html += '<th>排名</th><th>选手</th><th>比赛分</th><th>有效场次</th><th>前五场最佳成绩</th><th>主页</th>';
+    html += '</tr></thead><tbody>';
+
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var user = item.user;
+      var nameCell = user.url ?
+        '<a href="' + escapeHtml(user.url) + '" target="_blank">' + escapeHtml(user.name) + '</a>' :
+        escapeHtml(user.name);
+      var scoresCell = '';
+      for (var j = 0; j < item.top5.length; j++) {
+        var r = item.top5[j];
+        var contest = contestMap[r.contest_id];
+        var contestName = contest ? contest.name : r.contest_id;
+        if (j > 0) scoresCell += ' / ';
+        scoresCell += '<span title="' + escapeHtml(contestName) + '">' + r.score + '</span>';
+      }
+      var homeCell = user.url ?
+        '<a href="' + escapeHtml(user.url) + '" target="_blank">访问</a>' : '-';
+      html += '<tr>';
+      html += '<td>' + (i + 1) + '</td>';
+      html += '<td>' + nameCell + '</td>';
+      html += '<td>' + item.rating + '</td>';
+      html += '<td>' + item.total + '</td>';
+      html += '<td>' + scoresCell + '</td>';
+      html += '<td>' + homeCell + '</td>';
+      html += '</tr>';
+    }
+
+    html += '</tbody></table>';
     return html;
   }
 

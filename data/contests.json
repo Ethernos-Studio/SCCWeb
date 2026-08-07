@@ -1,5 +1,6 @@
 [
   {
+    "id": "ESCC-G2026FOC-1st-R2-Replay",
     "name": "Ethernos SCC-G 2026FOC 1st 春季挑战赛 第二轮 题目回放练习",
     "url": "https://www.luogu.com.cn/contest/346312",
     "invitation_code": "xtz6",
@@ -7,6 +8,7 @@
     "end_time": "2026-08-11T16:56:00+08:00"
   },
   {
+    "id": "ESCC-J2026ScdOL-R2",
     "name": "Ethernos SCC-J 2026 Second Online Round.2(ESCC-J2026ScdOL R2)",
     "url": "https://www.luogu.com.cn/contest/346345",
     "invitation_code": "ayk1",
@@ -14,6 +16,7 @@
     "end_time": "2026-08-05T18:00:00+08:00"
   },
   {
+    "id": "ESCC-S2026ScdOL-R2",
     "name": "EEthernos SCC-S 2026 Second Online Round.2(ESCC-S2026ScdOL R2)",
     "url": "https://www.luogu.com.cn/contest/347326",
     "invitation_code": "agoa",
