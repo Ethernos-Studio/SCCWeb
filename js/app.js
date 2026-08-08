@@ -522,6 +522,17 @@
         continue;
       }
 
+      if (/^\|/.test(line)) {
+        var tableLines = [];
+        while (i < lines.length && /^\|/.test(lines[i])) {
+          tableLines.push(lines[i]);
+          i++;
+        }
+        i--;
+        html += renderTable(tableLines);
+        continue;
+      }
+
       if (/^\s*$/.test(line)) {
         continue;
       }
@@ -531,6 +542,53 @@
 
     flushCode();
     closeList();
+    return html;
+  }
+
+  function renderTable(lines) {
+    var rows = [];
+    for (var i = 0; i < lines.length; i++) {
+      var cells = lines[i].split('|');
+      for (var j = 0; j < cells.length; j++) {
+        cells[j] = cells[j].trim();
+      }
+      if (cells[0] === '') cells.shift();
+      if (cells[cells.length - 1] === '') cells.pop();
+      rows.push(cells);
+    }
+    if (!rows.length) return '';
+
+    var html = '<table>';
+    var hasHeader = rows.length >= 2 && rows[1].every(function(c) {
+      return /^\s*:?-+:?\s*$/.test(c);
+    });
+
+    if (hasHeader) {
+      html += '<thead><tr>';
+      for (var j = 0; j < rows[0].length; j++) {
+        html += '<th>' + inlineMd(rows[0][j]) + '</th>';
+      }
+      html += '</tr></thead><tbody>';
+      for (var i = 2; i < rows.length; i++) {
+        html += '<tr>';
+        for (var j = 0; j < rows[i].length; j++) {
+          html += '<td>' + inlineMd(rows[i][j]) + '</td>';
+        }
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+    } else {
+      html += '<tbody>';
+      for (var i = 0; i < rows.length; i++) {
+        html += '<tr>';
+        for (var j = 0; j < rows[i].length; j++) {
+          html += '<td>' + inlineMd(rows[i][j]) + '</td>';
+        }
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+    }
+
     return html;
   }
 

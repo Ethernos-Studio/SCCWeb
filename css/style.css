@@ -252,6 +252,25 @@ table.data-table tr:hover {
   margin: 12px 0;
 }
 
+#article-view table {
+  border-collapse: collapse;
+  margin: 12px 0;
+  width: auto;
+  border: 1px solid #999;
+}
+
+#article-view th,
+#article-view td {
+  border: 1px solid #999;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+#article-view th {
+  background: #e0e0e0;
+  font-weight: bold;
+}
+
 #article-view ul,
 #article-view ol {
   margin-left: 24px;

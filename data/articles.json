@@ -12,5 +12,12 @@
     "date": "2026-08-05",
     "category": "题解",
     "file": "articles/editorial-pow.md"
+  },
+  {
+    "id": "es1012-solution",
+    "title": "(ES1012) T715423 [SCC-G2026] 质数 (prime) — 入门题解",
+    "date": "2026-08-08",
+    "category": "题解",
+    "file": "articles/es1012-solution.md"
   }
 ]
