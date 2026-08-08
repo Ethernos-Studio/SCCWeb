@@ -22,6 +22,14 @@
     "invitation_code": "agoa",
     "start_time": "2026-08-09T14:00:00+08:00",
     "end_time": "2026-08-09T17:30:00+08:00"
+  },
+  {
+    "id": "ESCC-J2026ScdOL-R2-Replay",
+    "name": "Ethernos SCC-J 2026 Second Online Round.2(ESCC-J2026ScdOL R2) 题目回放练习",
+    "url": "https://www.luogu.com.cn/contest/347490",
+    "invitation_code": "p9s0",
+    "start_time": "2026-08-08T11:08:00+08:00",
+    "end_time": "2026-08-15T11:08:00+08:00"
   }
 
 ]
