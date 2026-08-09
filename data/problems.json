@@ -160,5 +160,29 @@
     "id": "ES1027",
     "url": "https://www.luogu.com.cn/problem/T798836",
     "difficulty": 5
+  },
+  {
+    "title": "[ESCC-S2026ScdOL R2] 防线崩溃 (collapsed)",
+    "id": "ES1028",
+    "url": "https://www.luogu.com.cn/problem/U714189",
+    "difficulty": 3
+  },
+  {
+    "title": "[ESCC-S2026ScdOL R2] 动态封锁 (dynlock)",
+    "id": "ES1029",
+    "url": "https://www.luogu.com.cn/problem/U714251",
+    "difficulty": 6
+  },
+  {
+    "title": "[ESCC-S2026ScdOL R2] 辐射区段 (Radiation)",
+    "id": "ES1030",
+    "url": "https://www.luogu.com.cn/problem/U714211",
+    "difficulty": 6
+  },
+  {
+    "title": "[ESCC-S2026ScdOL R2] 关键据点 (keybase)",
+    "id": "ES1031",
+    "url": "https://www.luogu.com.cn/problem/U714321",
+    "difficulty": 8
   }
 ]
