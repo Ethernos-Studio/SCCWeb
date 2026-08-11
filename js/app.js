@@ -48,6 +48,83 @@
     }).catch(function(e) {
       document.getElementById('content').innerHTML = '数据加载失败：' + escapeHtml(e.message);
     });
+
+    loadAnnouncement();
+  }
+
+  var announcementDismissed = false;
+
+  function loadAnnouncement() {
+    fetch('articles/announcement.md')
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function(md) {
+        if (!md.replace(/\s/g, '')) return;
+        var hash = simpleHash(md);
+        var bar = document.getElementById('announcement-bar');
+        document.getElementById('announcement-body').innerHTML = renderMarkdown(md);
+        bar.setAttribute('data-hash', hash);
+        announcementDismissed = storageGet('announcement-dismissed') === hash;
+        if (document.getElementById('content').style.display !== 'none') {
+          updateAnnouncementUI();
+        }
+      })
+      .catch(function() {
+        // 公告文件缺失或加载失败时不显示公告栏
+      });
+  }
+
+  window.closeAnnouncement = function() {
+    announcementDismissed = true;
+    var bar = document.getElementById('announcement-bar');
+    storageSet('announcement-dismissed', bar.getAttribute('data-hash') || '');
+    bar.style.display = 'none';
+    document.getElementById('announcement-toggle').style.display = 'block';
+  };
+
+  window.showAnnouncement = function() {
+    announcementDismissed = false;
+    document.getElementById('announcement-toggle').style.display = 'none';
+    document.getElementById('announcement-bar').style.display = 'block';
+  };
+
+  function updateAnnouncementUI() {
+    var bar = document.getElementById('announcement-bar');
+    var toggle = document.getElementById('announcement-toggle');
+    if (!bar.getAttribute('data-hash')) return;
+    if (announcementDismissed) {
+      bar.style.display = 'none';
+      toggle.style.display = 'block';
+    } else {
+      bar.style.display = 'block';
+      toggle.style.display = 'none';
+    }
+  }
+
+  function simpleHash(str) {
+    var h = 5381;
+    for (var i = 0; i < str.length; i++) {
+      h = ((h << 5) + h + str.charCodeAt(i)) >>> 0;
+    }
+    return String(h);
+  }
+
+  function storageGet(key) {
+    try {
+      return window.localStorage ? localStorage.getItem(key) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function storageSet(key, value) {
+    try {
+      if (window.localStorage) localStorage.setItem(key, value);
+    } catch (e) {
+      // 忽略存储失败（如隐私模式）
+    }
   }
 
   function getQueryParam(name) {
@@ -60,6 +137,7 @@
     history.replaceState(null, '', window.location.pathname + '#' + tab);
     document.getElementById('article-view').style.display = 'none';
     document.getElementById('content').style.display = 'block';
+    updateAnnouncementUI();
     render();
   };
 
@@ -429,6 +507,8 @@
       .then(function(r) { return r.text(); })
       .then(function(md) {
         document.getElementById('content').style.display = 'none';
+        document.getElementById('announcement-bar').style.display = 'none';
+        document.getElementById('announcement-toggle').style.display = 'none';
         var view = document.getElementById('article-view');
         view.style.display = 'block';
         view.innerHTML = '<div class="back-link"><a href="#" onclick="backToList();return false;">&laquo; 返回列表</a></div>' + renderMarkdown(md);
@@ -445,6 +525,7 @@
   window.backToList = function() {
     document.getElementById('article-view').style.display = 'none';
     document.getElementById('content').style.display = 'block';
+    updateAnnouncementUI();
     history.replaceState(null, '', window.location.pathname + '#articles');
   };
 

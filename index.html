@@ -17,6 +17,11 @@
 <div id="container">
   <div id="center" class="column">
     <div class="inner">
+      <div id="announcement-toggle" style="display:none;"><a href="#" onclick="showAnnouncement();return false;">&#9873; 显示公告</a></div>
+      <div id="announcement-bar" style="display:none;">
+        <a href="#" class="announcement-close" onclick="closeAnnouncement();return false;" title="关闭">&times;</a>
+        <div id="announcement-body"></div>
+      </div>
       <h2 id="section-title">赛事 / 活动</h2>
       <div id="content">正在加载数据...</div>
       <div id="article-view" style="display:none;"></div>

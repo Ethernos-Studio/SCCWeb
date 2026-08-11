@@ -19,5 +19,12 @@
     "date": "2026-08-08",
     "category": "题解",
     "file": "articles/es1012-solution.md"
+  },
+  {
+    "id": "escc_cj_cs_announcement",
+    "title": "关于举办 ESCC‑CJ / ESCC‑CS 模拟赛的通知",
+    "date": "2026-08-11",
+    "category": "公告",
+    "file": "articles/escc_cj_cs_announcement.md"
   }
 ]

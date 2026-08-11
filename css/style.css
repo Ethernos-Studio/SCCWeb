@@ -285,3 +285,56 @@ table.data-table tr:hover {
   color: #666;
   font-style: italic;
 }
+
+/* 公告栏 */
+#announcement-toggle {
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+#announcement-bar {
+  position: relative;
+  border: 1px solid #999;
+  background: #fffbe6;
+  padding: 8px 28px 8px 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+#announcement-bar p {
+  margin-bottom: 6px;
+}
+
+#announcement-bar ul,
+#announcement-bar ol {
+  margin-left: 24px;
+  margin-bottom: 6px;
+}
+
+#announcement-bar h1,
+#announcement-bar h2,
+#announcement-bar h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 6px;
+}
+
+#announcement-bar code {
+  font-family: "Courier New", Courier, monospace;
+  background: #eee;
+  padding: 1px 3px;
+}
+
+.announcement-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 18px;
+  line-height: 1;
+  color: #666;
+  text-decoration: none;
+}
+
+.announcement-close:hover {
+  color: #cc0000;
+}
