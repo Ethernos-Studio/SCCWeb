@@ -30,6 +30,14 @@
     "invitation_code": "p9s0",
     "start_time": "2026-08-08T11:08:00+08:00",
     "end_time": "2026-08-15T11:08:00+08:00"
+  },
+  {
+    "id": "ESCC2026-BJ1",
+    "name": "Ethernos SCC-B 2026 第一轮（初赛 J 组）模拟赛",
+    "url": "https://www.luogu.com.cn/contest/348808",
+    "invitation_code": "mrcc",
+    "start_time": "2026-08-13T11:14:00+08:00",
+    "end_time": "2026-08-13T11:16:00+08:00"
   }
 
 ]
