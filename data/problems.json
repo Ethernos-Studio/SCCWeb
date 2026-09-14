@@ -199,7 +199,7 @@
   },
   {
     "title": "[ESCC-CJ2026] 红绿灯",
-    "id": "ES1037",
+    "id": "ES1034",
     "url": "https://www.luogu.com.cn/problem/U716627",
     "difficulty": 1
   },
@@ -211,13 +211,13 @@
   },
   {
     "title": "[ESCC-CJ2026] 运输计划",
-    "id": "ES1034",
+    "id": "ES1036",
     "url": "https://www.luogu.com.cn/problem/U717258",
     "difficulty": 2
   },
   {
     "title": "[ESCC-CJ2026] 选举委员会",
-    "id": "ES1036",
+    "id": "ES1037",
     "url": "https://www.luogu.com.cn/problem/U716644",
     "difficulty": 5
   },
