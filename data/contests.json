@@ -62,6 +62,14 @@
     "invitation_code": "4uhd",
     "start_time": "2026-08-17T14:00:00+08:00",
     "end_time": "2026-08-17T17:30:00+08:00"
+  },
+  {
+    "id": "EMR-001",
+    "name": "【EMR-001】以太诺斯 10 月月赛 & ESCC 2026 第二轮（复赛 S 组）模拟",
+    "url": "https://www.luogu.com.cn/contest/365434",
+    "invitation_code": "kzp6",
+    "start_time": "2026-10-18T14:30:00+08:00",
+    "end_time": "2026-10-18T18:00:00+08:00"
   }
 
 ]
