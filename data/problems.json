@@ -232,5 +232,17 @@
     "id": "ES1039",
     "url": "https://www.luogu.com.cn/problem/U716635",
     "difficulty": 5
+  },
+  {
+    "title": "改写",
+    "id": "ES1040",
+    "url": "https://www.luogu.com.cn/problem/U743053",
+    "difficulty": 3
+  },
+  {
+    "title": "迷宫计数",
+    "id": "ES1041",
+    "url": "https://www.luogu.com.cn/problem/U743117",
+    "difficulty": 8
   }
 ]
