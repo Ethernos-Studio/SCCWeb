@@ -33,5 +33,12 @@
     "date": "2026-08-12",
     "category": "公告",
     "file":"articles/escc_cj_cs_date_change_announcement.md"
+  },
+  {
+    "id": "es1041-solution",
+    "title": "[题解] U743117 迷宫计数",
+    "date": "2026-10-17",
+    "category": "题解",
+    "file":"articles/es1041-solution.md"
   }
 ]
