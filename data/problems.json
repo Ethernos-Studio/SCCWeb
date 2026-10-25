@@ -116,7 +116,7 @@
   {
     "title": "[SCC-G 2026] 温度监测",
     "id": "ES1020",
-    "url": "https://www.luogu.com.cn/problem/T752647",
+    "url": "https://www.luogu.com.cn/problem/U746524",
     "difficulty": 1
   },
   {
@@ -244,5 +244,29 @@
     "id": "ES1041",
     "url": "https://www.luogu.com.cn/problem/U743117",
     "difficulty": 8
+  },
+  {
+    "title": "纸条",
+    "id": "ES1042",
+    "url": "https://www.luogu.com.cn/problem/T836838",
+    "difficulty": 4
+  },
+  {
+    "title": "公路",
+    "id": "ES1043",
+    "url": "https://www.luogu.com.cn/problem/T836840",
+    "difficulty": 6
+  },
+  {
+    "title": "信号",
+    "id": "ES1044",
+    "url": "https://www.luogu.com.cn/problem/T836841",
+    "difficulty": 6
+  },
+  {
+    "title": "频谱",
+    "id": "ES1045",
+    "url": "https://www.luogu.com.cn/problem/T836842",
+    "difficulty": 7
   }
 ]
