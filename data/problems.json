@@ -268,5 +268,53 @@
     "id": "ES1045",
     "url": "https://www.luogu.com.cn/problem/T836842",
     "difficulty": 7
+  },
+  {
+    "title": "「#0 烬落行动」 老板奖章",
+    "id": "ES1046",
+    "url": "https://www.luogu.com.cn/problem/T840976",
+    "difficulty": 1
+  },
+  {
+    "title": "「#0 烬落行动」 最低者优先",
+    "id": "ES1047",
+    "url": "https://www.luogu.com.cn/problem/T840977",
+    "difficulty": 2
+  },
+  {
+    "title": "「#0 烬落行动」 仓库满减",
+    "id": "ES1048",
+    "url": "https://www.luogu.com.cn/problem/T840978",
+    "difficulty": 3
+  },
+  {
+    "title": "「#0 烬落行动」 落子增势",
+    "id": "ES1049",
+    "url": "https://www.luogu.com.cn/problem/T840979",
+    "difficulty": 4
+  },
+  {
+    "title": "「#0 烬落行动」 反向定位",
+    "id": "ES1050",
+    "url": "https://www.luogu.com.cn/problem/T840980",
+    "difficulty": 6
+  },
+  {
+    "title": "「#0 烬落行动」 超压链接",
+    "id": "ES1051",
+    "url": "https://www.luogu.com.cn/problem/T840981",
+    "difficulty": 6
+  },
+  {
+    "title": "「#0 烬落行动」 车辙与风",
+    "id": "ES1052",
+    "url": "https://www.luogu.com.cn/problem/T840989",
+    "difficulty": 7
+  },
+  {
+    "title": "「#0 烬落行动」 定式",
+    "id": "ES1053",
+    "url": "https://www.luogu.com.cn/problem/T840990",
+    "difficulty": 8
   }
 ]
