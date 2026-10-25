@@ -70,6 +70,14 @@
     "invitation_code": "kzp6",
     "start_time": "2026-10-18T14:30:00+08:00",
     "end_time": "2026-10-18T18:00:00+08:00"
+  },
+  {
+    "id": "EMR-002",
+    "name": "【EMR-002】以太诺斯 10 月月赛 #2 & OI OPERATION ASHFALL",
+    "url": "https://www.luogu.com.cn/contest/367604",
+    "invitation_code": "4ry6",
+    "start_time": "2026-10-25T13:00:00+08:00",
+    "end_time": "2026-10-25T18:00:00+08:00"
   }
 
 ]
